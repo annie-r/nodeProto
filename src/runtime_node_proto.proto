@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+ package runtimeNodeProto;
+
+ option java_package = "com.ansross.accessibilityplugin.nodeProto";
+ option java_outer_classname = "RuntimeNodeProtos";
+
+ message LabelNode {
+   enum AttributeType {
+       TEXT = 0;
+       CONTENTDESC = 1;
+       HINT = 2;
+       LABELFOR = 3;
+      }
+
+   optional string resourceId = 1;
+   optional string label = 2;
+   optional AttributeType attribute = 3;
+   repeated LabelNode contributingNodes = 4;
+
+  }
